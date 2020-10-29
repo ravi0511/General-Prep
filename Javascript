@@ -1,0 +1,39 @@
+https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/
+https://www.toptal.com/javascript/interview-questions
+
+Hoisting and temporal dead zone -> javascript life cycle
+myVar;   // => ???
+myConst; // => ???
+var myVar = 'value';
+const myConst = 3.14;
+*https://dmitripavlutin.com/javascript-hoisting-in-details/
+*Var, function -> can be initiated, declared and used because the declarion will be done on the top of the scope by default. the value of the variable will be "undefined" till declartion but will not throw error.
+*var test = function(){} -> this function should be declared and used, unlike the traditional hosting of functions.
+Let, const, class -> should be declared and used, else error will be thrown.
+*class can be declared using var, let and const using class keyword, then it will start using the respective hosting mechanism.
+
+GreatExample:
+console.log(1 +  "2" + "2");
+console.log(1 +  +"2" + "2");
+console.log(1 +  -"1" + "2");
+console.log(+"1" +  "1" + "2");
+console.log( "A" - "B" + "2");
+console.log( "A" - "B" + 2);
+
+Depth-first search algorithm
+ 
+null is an object
+arrays are indeed objects
+
+
+generator in JS?
+function*
+yield keyword
+
+
+
+Why use arrow functions almost everywhere?
+
+    Scope safety: When arrow functions are used consistently, everything is guaranteed to use the same thisObject as the root. If even a single standard function callback is mixed in with a bunch of arrow functions there's a chance the scope will become messed up.
+    Compactness: Arrow functions are easier to read and write. (This may seem opinionated so I will give a few examples further on).
+    Clarity: When almost everything is an arrow function, any regular function immediately sticks out for defining the scope. A developer can always look up the next-higher function statement to see what the thisObject is.
