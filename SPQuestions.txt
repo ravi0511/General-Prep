@@ -1,0 +1,1011 @@
+sharepoint online questions:
+can farm solution be installed ? no
+
+types of cookies in SPO: 
+1. Federation Authentication[used for logging into admin/root sites without manual login] (When a user signs out of SharePoint Online, the rtFA cookie is deleted.)
+2. Persistent (Permanent)[keep me signed in]
+3. session cookies (gets deleted with the session is closed)
+ref: https://blog.mydock365.com/understanding-sharepoint-online-authentication
+
+Graph API: used to access o365 data.
+
+content editor and script editor, will not be available by default, have to enable in sp admin page.
+
+remote event receivers in SPO using Add-ins.
+
+for migration from on-prem to SPO -> farm solutions should be converted into Add-ins.
+
+Sharepoint modernization scanner for converting classic sites to modern.
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/transform/modernize-scanner
+
+SPO there is no web application, only site collections can be created.
+
+external sharing possible(ie. people outside the organization)
+External user access management is made easy
+
+SPO syncs with onedrive to maintain files.
+
+OneDrive for Business provides employees with a personal site, where they can share, sync and collaborate on documents with people inside and outside the organization and access their content from a large number of devices. OneDrive for Business can be integrated with Office products and can also be synced into Windows Explorer for a familiar experience.
+
+can be connected with MS Teams. through SPO modern pages or SPFx.
+
+Master page can be created through Design Manager(convert the html file to .master page)
+
+Sandbox solution in SPO:
+ Code based sandbox solutions contain server-side code and the solution contains .Net assembly file (.dll). These types of Sandbox Solutions are deprecated.
+
+ Declarative Sandbox Solutions or NCSS (No Code Sandbox Solution), then you are SAFE. The solutions which have got the code, only in languages like CSS, HTML, JavaScript frameworks (JQuery, Angular.JS, React.JS, Node.JS), AJAX, SharePoint REST API, XML are called Declarative code.
+
+ In SPO, the sandbox solution is installed in sitecollection->settings->solutions->upload solution->activate->use the webpart in pages.
+
+connect to third party apps(yammer, sitecore, wordpress, facebook, etc) through power automate and power apps
+
+Microsoft 365 Groups, let you choose a set of people that you wish to collaborate with and easily set up a collection of resources for those people to share. Resources such as a shared Outlook inbox, shared calendar or a document library for collaborating on files. 
+
+It can be private or public group. Content in a private group can only be seen by the members of the group and people who want to join a private group have to be approved by a group owner.
+
+can be created in outlook
+MS Teams
+yammer
+team site in SPO
+plan in MS Planner
+
+SPO pros:
+no maintainance of servers
+Reliable model
+new feature update is faster
+integration with O365
+
+SPO cons:
+lack of control because of no server, so sensitive data's cannot be stored, high level customizations cannot be done.
+required increased bandwidth as o365 tends to slowed down when used by larger organizations
+breaking customization -> when we develop a custom application, then an update from SPO could break it sometimes.
+
+Modern Team site webparts: (all are a form of collabrating webparts)
+planner -> digitial kanban board
+yammer -> display a feed of conversations
+exchange calender -> display your own outlook calender in a sp page
+onenote -> shared onenote
+stream(video hosting services) -> stream videos from library, youtube etc.
+
+commnuication sites vs team sites:
+team sites are for a group a people to collabrate in a single site with a single motive/goal.
+
+communication sites are controlled by a small group of people which is used to broadcast information to a wider audience.
+
+communication site vs publishing site:
+
+both functionalities are similar, but the publishing site is created based on master page and page templates/custome page templates and are more structured.
+
+communication site has more newer webparts for visually appealing, simple to create and maintain.publishing feature is not supported in communication site.
+
+Custom themes can be created. use JSOM schema to design the theme.
+ four primary keys in JSOM schema:
+name:
+ The name of the theme, which appears in the theme picker UI and is also used by administrators and developers to refer to the theme in PowerShell cmdlets or calls to the SharePoint REST API.
+isInverted:
+ This value should be false for light themes and true for dark themes; it controls whether SharePoint uses dark or light theme colors to render text on colored backgrounds.
+backgroundImageUri:
+ The URI of an optional background image for the theme (value can be blank if no background image).
+palette: The RGB color settings for the theme, stored as a nested JSON object with the following keys:
+
+
+Site Design and scripts:
+Mainly used to modify the sites that we create
+
+Site designs are like a template. They can be used each time a new site is created to apply a consistent set of actions. 
+
+communication default designs:
+Topic
+Showcase
+Blank
+
+teams default designs:
+Teams
+
+
+CSOM to connect to SPO: ctx.Credentials = new SharePointOnlineCredentials("admin@mydomain.com", passWord);
+
+ SharePoint hub sites connect and organize sites based on organizational attributes such as project, department, division, or region. You can use PowerShell cmdlets or the SharePoint REST API to automate tasks such as creating, removing, or controlling permissions for hub sites.
+ This is based on Flat Architecture. The hub sites are for creating a group of site or site collections for an particular department/project/division.
+
+Column formatting:
+based on JSON schema created in the column settings
+
+
+SharePoint webhooks enable developers to build applications that subscribe to receive notifications on specific events that occur in SharePoint. When an event is triggered, SharePoint sends an HTTP POST payload to the subscriber.
+
+site design, theme should be installed and then used. it is installed through CLI
+
+Fluent UI Theme designer
+
+
+64 -> Team site template
+
+68 -> communication site template
+
+
+ SharePoint webhooks enable developers to build applications that subscribe to receive notifications on specific events that occur in SharePoint. When an event is triggered, SharePoint sends an HTTP POST payload to the subscriber. Webhooks are easier to develop and consume than Windows Communication Foundation (WCF) services used by SharePoint Add-in remote event receivers because webhooks are regular HTTP services (web API).
+
+
+SPO currently can be used as a public site using security trimming done in the SP admin center page, but there are official announcements where it will be disconntinued.
+
+security trimming in SPO: https://sharepointmaven.com/permission-driven-security-work-sharepoint-also-known-security-trimming/
+
+ref: https://docs.microsoft.com/en-us/sharepoint/troubleshoot/sites/public-websites-be-discontinued
+
+************************************************************************************************************
+
+SPFx:
+
+base classes for SPFx to work in a page:
+sp-loader -> loads all the necessary webpart libraries needed for the SPFx to work. ref: https://docs.microsoft.com/en-us/javascript/api/sp-loader?view=sp-typescript-latest
+sp-webpart-base -> ipropertypane, baseclientsidewebpart ref: https://docs.microsoft.com/en-us/javascript/api/sp-webpart-base?view=sp-typescript-latest
+sp-core-library -> ref: https://docs.microsoft.com/en-us/javascript/api/sp-core-library?view=sp-typescript-latest
+
+
+spfx extensions will not work in classic pages.
+
+
+why spfx ?
+
+adv:
+1. can use any open source libraries
+2. renders in both modern and classic sites(only webpart)
+3. easy to develop, deploy and maintain than add-ins
+4. use modern web technologies and tools
+5. can integrate with teams
+6. can work with external APIs
+
+disadvantage of JSOM, REST API:
+1. content/script editor webparts not available in modern pages
+2. only can be used inside sharepoint
+
+
+disadvantage of add-ins over spfx:
+1. Add-in are rendered in iframe and has separate hosting environments
+2. the app host cannot access the features of the hosted web
+3. different page layout from the standard sharepoint layout
+4. lots of server side configurations
+
+spfx installed from app catalog -> 1. Tenant app catalog(globally), 2. Site collection App catalog
+
+Enabling site collection app catalog for the particular site requires tenant level administrator access.
+This is a one-time activity to be done by tenant admins.To enable this, we need to run some power shell or Office 365 CLI commands.
+
+spo connect https://tahmid.sharepoint.com
+
+In the next step, to enable the site collection app catalog to need to run the following command. 
+
+spo site appcatalog add --url https://tahmid.sharepoint.com /sites/site-collection
+
+After completing the above process, if we go back to that specific SharePoint Online site, we will find the app catalog in the Site Contents.
+
+
+SPFx web parts can be added to both classic and modern pages.
+
+tools:
+node js
+yo man template
+gulp
+
+webpart:
+
+extension:
+ Application Customizers: Adds scripts to the page, and accesses well-known HTML element placeholders and extends them with custom renderings.
+Field Customizers: Provides modified views to data for fields within a list.
+Command Sets: Extends the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement behaviors.
+
+Library Components:
+ Library components provide you an alternative option to create shared code, which can be then used and referenced cross all the components in the tenant.
+
+SP REST API -> SPHttpClient, SPHttpClientResponse.
+
+External/Anonymous API -> Httpclient, httpclientresponse.
+
+IPropertyPane -> add/edit fields in the webpart properties
+
+Config folder -> contains all the configuration files
+
+cdnpath -> path of the cdn where the clientsideassets will be served to the SPFx. Location:Azure storage as CDN, O365 CDN, Sharepoint library, external CDN.
+
+ If you would not have CDN enabled in your tenant, and the includeClientSideAssets setting would be truein the package-solution.json, the loading URL for the assets would be dynamically updated and pointing directly to the *ClientSideAssets* folder located in the app catalog site collection.
+
+permissions in SPFx:
+
+library used : import { SPPermission } from '@microsoft/sp-page-context';
+
+hasAllPermissions : Checks if the user has all the permissions
+hasAnyPermissions: Checks if the user has any permission from the collection of permissions
+hasPermission: Checks if the user has given permission
+
+code example:
+const admin = this.context.pageContext.web.permissions.hasAllPermissions(SPPermission.fullMask);
+const canEdit = this.context.pageContext.web.permissions.hasAnyPermissions(SPPermission.manageWeb);
+const canView = this.context.pageContext.web.permissions.hasPermission(SPPermission.viewPages);
+
+To check whether a user is a Tenant admin:
+this.context.pageContext.legacyPageContext['isSiteOwner'];
+
+To check whether user is an Site collection Administrator:
+this.context.pageContext.legacyPageContext.isSiteAdmin;    
+reference: https://www.c-sharpcorner.com/article/permision-based-webpart-binding-in-spfx/
+
+using people picker in spfx:
+we have to install the pnp-people-picker library and start using it.
+
+Execute the following command to install the PnP React Controls NPM package.
+ 
+>npm install @pnp/spfx-controls-react –save
+ 
+Execute the following command to install the pnp sp library.
+ 
+>npm install @pnp/sp –save
+
+https://www.c-sharpcorner.com/article/pnp-people-picker-control-in-sharepoint-framework/
+
+
+using JSOM in SPFx:
+have to install microsoft.ajax and sharepoint type/typing library in spfx
+
+npm install @types/microsoft-ajax @types/sharepoint --save-dev  
+
+reference: https://www.c-sharpcorner.com/article/sharepoint-jsom-operations-using-spfx-solution/
+
+When a webpart is created, it's associated list will be created when the spfx is installed in the site. this can be achieved by maintaining a schema/list definitions for the creating a new list with the required fields and relative datatypes.
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/provision-sp-assets-from-package
+
+
+if in a page multiple spfx webparts are available and using the same list, then with one request how can we update all the webparts values and display datas ???
+
+
+commands(highly important): https://www.c-sharpcorner.com/article/spfx-commands-cheat-sheet/
+
+connecting webparts in SPFX --> IDynamicDataCallables, third party tool (ReactiveX)
+ref: https://www.c-sharpcorner.com/article/pass-data-between-web-parts-connected-web-parts-using-spfx/
+
+https://www.netwoven.com/2019/12/18/data-flow-in-between-multiple-spfx-webparts-using-dynamic-data/
+
+
+The JavaScript files, CSS, and other assets are packaged in the package when the --ship option is used.
+
+
+.jsx -> extension of .js, used to insert html inside javascript
+
+.ts -> plain type script file
+
+.tsx -> when we wanted to embed jsx elements inside the files, mostly used in react.
+
+.sass -> A SASS file is a Syntactically Awesome StyleSheets file. It contains Sass syntax, which is an extension of cascading style sheets (CSS) used to format the layout of webpages.
+
+****************************************************************************************************
+
+SharePoint Search:
+sharepoint 2013 fast search introduced.
+
+KQL (key word query language) used in search query web part.
+
+Crawling:
+full crawl -> done only once when the app is being set up. can be manually triggered but still will crawl all the files, folders, list items etc.
+incremental crawl -> crawls only when there is a change in the content(create, update, delete). crawls only the updated/changed contents.
+continuous crawl -> crawls at a specified time interval(every 15 min, by default). crawls only the updated/changed contents
+
+all the crawls will create crawl properties. ex: name, url, author, search 
+
+
+To include the content and metadata of crawled properties in the search index, you map crawled properties to managed properties. Managed properties can have a large number of settings, or attributes. These attributes determine how the contents are shown in search results. The search schema contains the attributes on managed properties and the mapping between crawled properties and managed properties.
+
+The search schema has a list of crawled properties that helps the crawler decide what content and metadata to extract.
+
+Not all crawled content or metadata is useful to have in the search index, so the search schema has a list of useful types of content and metadata, called managed properties.
+
+The search index only includes content and metadata from the managed properties.
+
+Search comes with relevant crawled properties mapped to managed properties. For example, crawled properties related to author map to a managed property related to author. If you add a managed property, you must map it to a crawled property to get content into the index.
+
+The search schema controls what users can search for, how users can search it, and how you can present the results on your search websites. By changing the search schema, you can customize the search experience in SharePoint in Microsoft 365.
+
+reference: https://docs.microsoft.com/en-us/sharepoint/manage-search-schema
+
+Query rules:
+As a global or SharePoint admin in Microsoft 365, you can improve search results in the classic search experience by creating and managing query rules. Query rules help searches respond to the intent of users.
+
+A query rule can specify the following three types of actions:
+1. Promote a search result to appear above ranked results
+2. Add one or more groups of search results, called result blocks
+3. Change the ranking of search results
+
+query suggestion:
+Query spelling suggestions are words that appear below the search box as a user types a query. SharePoint automatically creates a query suggestion when you've clicked a search result for a query at least six times.
+
+result source:
+Result sources limit searches to certain content or to a subset of search results. You can also use result sources to send queries to external providers such as Bing.
+
+result type:
+As a site collection administrator or site owner, you can create and use result types to customize how results are displayed for particular types of documents.
+
+search dictionary:
+You can use search dictionaries to include or exclude company names to be extracted from the contents of your indexed documents, or you can include or exclude words for query spelling correction.
+
+hydird federate search:
+search done between and on-prem and sharepoint online
+
+1. inbound search (show results from SP on-prem in SPO) (doesnt require a reverse proxy server)
+2. outbound search (show results from SPO in SP on-prem) (requires a reverse proxy device)
+3. both scenarios (shows results in both from both) (requires a reverse proxy device)
+
+
+To modify the search result page:(edit the display template of the search result)
+1. there will be an default search results page template.
+2. go to master page gallery and edit the particular search template.
+3. In the required place, we have to inject the managedpropertyvalue of the field we wanted to display in the custom search results
+4. There is a specific format in which we have to inject it, the format starts like "_#/"
+
+ref:https://www.c-sharpcorner.com/article/steps-to-create-custom-display-templates-in-sharepoint-2013/
+
+*****************************************************************************************************************
+
+REST API:
+
+ajax call
+
+no need for sp.js file
+
+people picker field, look up fields uses extend keyword to get all the data.
+
+query large lists using top and get next iteration in data.d._next
+
+type: get, put(update or insert), post(create or update), delete
+
+Use PUT and MERGE operations to update existing SharePoint objects. Any service endpoint that represents an object property set operation supports both PUT requests and MERGE requests. For MERGE requests, setting properties is optional; any properties that you do not explicitly set retain their current property. For PUT commands, however, any properties you do not explicitly set are set to their default properties.
+
+Another important consideration when creating, updating, and deleting SharePoint entities is that if you aren't using OAuth to authorize your requests, these operations require the server's request form digest value as the value of the X-RequestDigest header
+When executing non-GET REST requests to the SharePoint REST API, you must include a valid request digest to your request. The digest proves validity of your request to SharePoint. Because this token is valid only for a limited period of time, you must ensure the token is valid before adding it to your request or the request fails.
+In spfx request digest is handled automatically internally.
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/basics/working-with-requestdigest
+
+The value of the IF-MATCH key in the request headers is where you specify the etag value of a list or list item. This particular value applies only to lists and list items, and is intended to help you avoid concurrency problems when you update those entities. The previous example uses an asterisk (*) for this value, and you can use that value whenever you don't have any reason to worry about concurrency issues. Otherwise, you should obtain the etag value or a list or list item by performing a GET request that retrieves the entity.
+
+concurrency problem -> two users trying to update an item at the same time.
+
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints
+
+To get the results in JSON format, include an Accept header set to "application/json;odata=verbose".
+
+batch update: possbile (never tested it)
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/make-batch-requests-with-the-rest-apis
+
+can modify permissions in list
+
+****************************************************************************************************************
+
+JSOM:
+
+need sp.js file to be loaded before executing client context
+
+more features than REST API
+
+handle large lists (camlQuery.ListItemCollectionPosition = "Paged=TRUE&p_ID=1034";)
+
+ref: https://www.codeproject.com/Articles/1076854/Overcoming-the-List-View-Threshold-in-SharePoint-C
+
+set_item -> to update item values. 
+
+batch update: by doing mutliple context.load() before context.executequeryasync()
+
+document.ready() -> after the DOM is loaded
+
+window.onload() -> fires when the entire page loads (usually after document.ready).
+
+**********************************************************************************************************
+
+Power apps:
+
+types:
+canvas -> full control
+model/data driven -> based on data
+
+by default in model driven apps:(opened based on sharepoint list):
+gallery screen
+display/details screen
+edit screen
+
+in sharepoint form edit:
+sharepointintegration -> takes care of the saving functionality
+screens -> contains all the fields in the form.
+
+Datas:
+common Data Services
+SharePoint
+Excel from Onedrive
+O365
+Azure SQL
+
+Architecture:
+Screens -> contains all the components
+gallery -> displays all/filtered the items
+forms -> binds the data with the fields
+card -> contains form fields and their dependent components like, error notification label. groups the fields.
+
+nested gallery and nested screens:
+multiple gallery can be nested into an single screen.
+
+variables:
+set -> scope:global (set)
+context -> scope:screen (updateContext)
+collect -> scope:app (collect, clear, clearcollect) [stored in clients device, can store tables, objects, records]
+
+connectors:
+there can be multiple connectors
+third party connectors
+custom connectors (used to fetch data from an external API)
+example: o365users(), powerappsformakers, powerappnotification, outlook
+
+o365users -> get all the users from the AD
+user() -> function to get current user in the app
+powerappsformakers -> version control, permissions(deletes/changes/get) to apps/connectors/connections
+powerappnotification -> send sms notification
+outlook -> email notification
+
+can integrate power BI in power apps
+controls -> power BI
+select -> workspace -> Dashboard -> title
+Multiple Data sets can be used -> live dataset/cache dataset/ imported dataset
+
+Delegation issue in power apps:
+power apps cannot deal with large data's it will slow down the app.hence the filtering searching querying should be delegated to the thrid party app(sharepoint, sql db, etc)
+
+not all the functionalities can be delegated, should refer the documentation to keep in track the delegation functionality.
+
+commands:
+groupby
+countrows
+filter
+
+
+people picker inside apps:
+combo box
+combination of a text box with gallery
+
+auto populate people picker with current user:
+1. Render the user in the people picker field, so that it will be displayed. (default selected value event)
+2. To save the value during submit process we have to update it. (using a function containing all the values of a people picker field.)
+{
+'@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+Claims:"i:0#f|membership|" & DataCardValue6.Selected.Email,
+Department:"",
+DisplayName:DataCardValue6.Selected.Email,
+JobTitle:"",
+Pictures:"",
+Email:DataCardValue6.Selected.Email
+
+}
+
+permissions in power apps:
+1. sharing to user's in the environment.
+2. inside the app, use AzureAD connector and filter based on current user and hide using the visible property,
+ else use sharepoint list as a master list to save user names and filter based on it, else use flow to check if a user belongs to a sharepoint group, etc many others way to do it.
+
+control the level of permission while sharing:
+ref: https://www.c-sharpcorner.com/article/how-to-control-the-level-of-permissions-on-your-powerapps-while-share/
+https://www.sharepointsiren.com/2019/08/powerapps-security-trimming-options/
+
+can use: permission can be set for the app, users or groups can run the app but not share it.
+
+can edit: hey can run the app, customize it, and share the app with customized version to other users. And also, they can remove the shared permission for other users.
+
+owners: creator of the app, has full control over it.
+
+Concurrency issues to be noted
+
+
+
+
+***************************************************************************************************************
+
+Power automate (MS Flow):
+
+Automated Flow -> triggered by an event
+Instant Flow -> manually triggered or by other applications
+Scheduled Flow -> triggered in time intervals
+
+UI Flow (AI/RPA) -> record a process in the user interface
+type: Desktop app and browser app
+Business flow -> contains lots of user interfaces, guides users through a multi-step process
+types: immersive and non-immersive
+
+can have multiple connectors
+create custom connectors(connect to an external api)
+
+Team flow:
+wheres the different connectors are connected with different user accounts to perform an action with a same goal.
+
+when an item is modified and triggers power automate and inside the flow, it updates the item again and re-trigger the flow again. how to handle this in flow.???
+
+***************************************************************************************************************
+
+Server side object model:
+
+visual webparts
+
+sandbox solution
+
+farm solution
+
+ web.AllowUnsafeUpdates = true;
+AllowUnsafeUpdates is set to true when you are trying to update the database as a result of the GET request.
+
+Say you have a list and you want to update something, then you need to set AllowUnsafeUpdates = true for the web and after you have done you need to set it back to false.
+
+AllowUnsafeUpdates = false protects from cross site scripting.
+
+
+SPSecurity.RunWithElevatedPrivileges (for even users with read only permission) -> we can tell that this method runs under the Application Pool identity, which has site collection administrator privileges on all site collections hosted by that application pool.
+
+
+Security Trimming:
+done in master page level
+page layout level 
+
+used to show/hide controls, ribbon, security etc. 
+
+can be done using VS or in design manager
+ref: https://docs.microsoft.com/en-us/sharepoint/dev/general-development/how-to-add-a-security-trim-snippet-in-sharepoint
+
+***************************************************************************************************************
+
+Add-ins:
+
+sharepoint hosted app (JSOM, REST API):
+can be hosted only inside sharepoint
+
+
+provider hosted app (CSOM):
+can be hosted in any webapp
+can be used with BCS
+used to created remote event receivers
+
+
+Permissions:
+app only
+user only
+app and user
+
+architecture:
+contains a separate app pool
+contains a separate hosting environment (app host)
+contains it's own permission
+
+
+disadvantages:
+hosted in an iframe (which is a security risk)
+does not render within sharepoint, hence does not follow master page, page layout designs.
+lots of configuration to be done in the server side.
+
+advantages:
+allows us to work with external data applications.
+creates an external content type to work with data outside sharepoint.
+hosts remote event receivers
+
+
+cross domain scripting:
+appWebUrl/_api/SP.AppContextSite(@t)/web?@t=’targetUrl’
+
+access host web data from app web from inside the app host.
+
+***************************************************************************************************************
+
+React JS:
+
+super():
+if there is a constructor in the class then super() is necessary to use the (this) property.
+ super() will calls the constructor of its parent class. This is required when you need to access some variables from the parent class.
+
+
+super(props):
+used to access the property(this.props) inside the constructor of the component
+by default props is accessible outside the constructor.
+
+life cycle of react:
+
+mounting, updating, unmounting
+
+
+mounting:
+constructor()
+statis getderivedstatefromprops()
+render()
+componentdidmount()
+
+updating:
+statis getderivedstatefromprops()
+shouldcomponentupdate()
+render()
+getsnapshotbeforeupdate()
+componentdidupdate()
+
+unmounting:
+componentwillunmount()
+
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+
+Note: Always start component names with a capital letter.
+
+Props(this.props) are Read-Only, you only modify state using this.setstate()
+
+startin point of a react: <clock> is a component, root is an id in div.
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+
+State Updates May Be Asynchronous, not always.
+
+this.props and this.state may be updated asynchronously, you should not rely on their values for calculating the next state.
+
+Stateful and Stateless Components
+Stateful and stateless components have many different names.
+
+They are also known as:
+
+– Container vs Presentational components
+
+– Smart vs Dumb components
+
+The literal difference is that one has state, and the other doesn’t.
+
+
+react hook:
+efficient way to manage state and props
+Hooks are backwards-compatible.
+They let you use state and other React features without writing a class.
+useState keyword is used.
+useState is a Hook that lets you add React state to function components.
+
+In a function component, we have no this, so we can’t assign or read this.state. Instead, we call the useState Hook directly inside our component
+
+how react works: ?
+
+in react there are two DOMs loaded, 1. actual DOM in the page 2. virtual DOM stored in the memory of the react
+
+react compared both the doms, if they are identicial no changes are done in the actual DOM, if there are changes in the virutal DOM then react makes only the necessary changes in the actual DOM element.
+
+when the react component is updated, it will first modify the virtual DOM, then compare it with the actual DOM and make necessary changes.
+
+element vs component
+
+element is usually stored in a variable and reused
+
+component is usually rendered directly using the class or function components and one big component can be split into multiple component.
+
+babel script is used to render react in new modern browsers.
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel" src="../SiteAssets/JS/MeetingTracker.js"></script>
+MeetingTracker.js -> contains our custom scripts.
+
+
+***************************************************************************************************************
+
+Migration questions:
+
+*************************************************************************************************************
+
+SharePoint Architecture:
+
+n - number of topology ie(can be installed in a single server or in multiple servers).
+
+multiple server division:
+application server (contains central admin, uls logs, sharepoint farm)
+db server
+wfe(web front end) server (can be more than one wfe)
+
+hierarchy:
+on-prem:
+1. farm (only one farm, but sharepoint can be installed in other wfe)
+2. web application
+3. site collection
+4. web/site
+5. subsite
+6. list and library
+
+sharepoint is Based on ASP.NET application
+
+Zones in sharepoint: (alternate access mappings)
+Internet
+Intranet
+Extranet
+Custom
+Default
+
+What is the difference?
+
+The main difference is each zone carries its own IIS Website after extending it from SharePoint. These zones have their own URLs configured for them.
+These zones have their own Port number, Protocol (http or https).
+Different authentication methods can be used to login in the different zones.
+E.g:- Forms authentication in Intranet, default Windows authentication etc.
+You configure your Blob and Distributed cache differently for the different zones.
+
+This allows you to set "Windows Authentication" for Intranet, "Form Authentication" for the extranet and "Form Authentication with allow anonymous" for the Internet.
+
+Cross-site publishing Feature:
+The Cross-Site Collection Publishing feature in SharePoint Server works in the following way: you use one or more authoring site collections to author and store content, and one or more publishing site collections to control the design of the site and to show the content
+example: used to create mega navigation in some organization, which contains information from different sitecollections displayed across all sitecollections.
+ref: https://docs.microsoft.com/en-us/sharepoint/administration/overview-of-cross-site-publishing
+
+creating public sharpoint site:
+ref: https://www.netwoven.com/2013/12/03/building-public-sites-with-sharepoint-2013-using-cross-site-publishing/
+
+
+SharePoint Multilingual site:
+1. install the language pack
+2. set up/configure the site collections/web applications to use the language pack.
+3. when creating site, change the language to the installed language.
+4. there is a feature where the controls can be translated but the content cannot be translated.
+5. To display the new language, we have to map each phrase with the english phrase in the resoruce file of the visual studio when creating this application.
+ref: https://docs.microsoft.com/en-us/sharepoint/sites/plan-for-multilingual-sites
+
+Sharepoint 2010 vs Sharepoint 2013 vs sharepoint 2016 vs sharepoint 2019 features:
+2010:
+server side and client side(JSOM, CSOM, REST API)
+BDC
+
+2013:
+server side and client side(JSOM, CSOM, REST API)
+sharepoint Addin (sharepoint hosted app, provider hosted apps)
+shredded storage feature
+minimal download strategy
+fast search
+better UI than 2010
+sync with onedrive
+BCS
+distributed cache services
+
+2016:
+onedrive for business
+mobile
+hydrid feature
+search (federated search)
+threshold limits
+
+2019:
+Modern pages (Team and communication sites)
+spfx
+onedrive (sync next gen)
+large files
+hub sites
+o365 integration
+
+
+Document set:
+similar to folder
+
+it is a type of document content type.
+
+contains it's own versioning feature
+
+can trigger workflow for each document set created
+
+can create a set of file/documents template while creating document sets.
+
+group of file/document working as a single entity
+
+can map metadata columns to each document sets and it;s files for filtering, querying and searching.
+
+can have a welcome page
+
+Managed Metadata/ Term store management:
+Metadata -> information about an information. ex: title, author, location etc.
+
+centrally managed in term store management
+
+Taxonomy:
+formal classification system. -> groups, words, terms.
+
+Folksonomy:
+Informal classification system. 
+
+Term set:
+group of related terms.
+
+scope of terms:
+local (within an site collection)
+global (across all site collection)
+
+Term:
+specified word or phrase.
+it is a single item in a term set.
+
+types of term:
+Managed Term (pre-defined)
+Enterprise keyword (used specifically inside an specific organization) []
+
+Managed metadata column:
+can be added to an list or library
+select a single or multiple terms from a term sets. can be exsisting term set or can create a new local term set for this column.
+apply an metadata term to an item(tagging).
+
+Enterprise keyword columns
+can be added to list library or a content type.
+users can tag a list item, file with a keyword or phrase.
+
+Advantages of metadata:
+consistent use of metadata
+improved content visibility
+metadata navigation for sites
+metadata navigation for lists and libraries
+increased flexibility
+
+Race Condition:
+
+When a work flow is triggered by a item creation/update and then the workflow updates the item, whan is preventing the workflow from triggered again and again and stopping it from going into an infinite loop ??
+
+It is handled by Race condition, 
+
+Event Receivers:
+
+Triggered by an event item creation, feature activation, deletion of a site etc
+
+synchronous Event receiver (triggered before an event has occured and db is updated, ie triggered before an item is created in the db)
+asynchronous event receiver (triggered after the event occured. ie after the db is updated)
+
+Before events are always executed under a synchronization mode of synchronous. A key point is that synchronous event handlers have a blocking nature because they run on the same thread that is processing the event action.
+
+Remote event receiver vs event receivers:
+Differences:
+
+Remote Event Receiver (RER):
+A provider hosted app is must, which means you need additional infra. Apparently, as pointed out by Mihail-Florin Popa, it is no longer true.
+Works using web services, you expose web services on your provider hosted app, that are called when an event is fired.
+Only Client Object Model is available inside the event receiver code, so you'll be limited by CSOM's limitations.
+This is the only option to override events if you have O365/SharePoint online.
+Using this approach makes your code future safe, when SOM is killed finally.
+This is the list of events available to override.
+https://docs.microsoft.com/en-us/previous-versions/office/sharepoint-csom/jj169229(v=office.15)?redirectedfrom=MSDN
+
+SharePoint Event Receivers (SER):
+No additional infra required to host event receiver code.
+Works using code running in context of W3WP.exe in case of farm solutions and spucworkerprocess.exe in case of SandBox solutions.
+Full fledged SOM API is available in case of farm solutions, no limits.
+This is only available in On-Premises environment.
+This might be deprecated or unsupported in future releases.
+This is the list of events available to override in SER.
+You have a choice only in case of On-Premises otherwise you HAVE to use RERS. However, to be future safe, you should start using RERs if it fulfills all your requirements as the App Model is the future of SharePoint.
+
+deployed as farm solution
+
+ref: https://www.c-sharpcorner.com/UploadFile/5b1f04/creating-simple-event-receiver-in-sharepoint-2013/
+
+Remote timer jobs in SharePoint online using Add-ins:
+
+ Create remote timer jobs to manage SharePoint by monitoring and taking action on SharePoint data. Remote timer jobs do not run on your SharePoint server. Instead, remote timer jobs are scheduled tasks that run on another server.
+
+Examples of how timer jobs are used include:
+
+ Performing governance tasks, such as displaying a message on the site when certain criteria are not met, or enforcing retention policies.
+Running scheduled processes that are processor-intensive.
+
+reference: https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/create-remote-timer-jobs-in-sharepoint
+
+What a SharePoint Timer Job is?
+
+A Timer Job is a periodically executed task inside SharePoint Server. It can do various tasks within the SharePoint environment on a scheduled time event basis.
+reference: https://www.c-sharpcorner.com/UploadFile/b8e86c/how-to-create-timer-job-in-sharepoint-2013/
+
+base class : SPJobDefinition
+
+To schedule the timer:
+In this method will create a SPTImerJobClass object and attached to SPMinuteSchedule so that on Every 15 minutes the SPMinuteScheduler will call Execute method of our customTimer Job:
+
+deployed as farm solution
+
+ref: https://www.splessons.com/create-a-timer-job-in-sharepoint-2013/
+
+State machine workflow:
+
+ A state machine workflow represents a set of states, transitions, and actions. The steps in a state machine workflow execute asynchronously. This means that they are not necessarily performed one after another, but instead are triggered by actions and states. One state is assigned as the start state, and then, based on an event, a transition is made to another state. The state machine can have a final state that determines the end of the workflow. The following diagram shows an example of a state machine workflow.
+
+Sequential workflow:
+
+ A sequential workflow represents a series of steps. The steps are performed one after another until the last activity is completed. Sequential workflows are always strictly sequential in their execution. Because they can receive external events, and include parallel logic flows, the exact order of execution may vary. The following illustration shows an example of a sequential workflow.
+
+
+A site definition defines a unique SharePoint site. Site definition is a combination of multiple files like .xml, .aspx, .ascx, and .master page, .gif , .doc etc and are stored in C:\ProgramFiles\Common Files\Microsoft Shared\web server extensions\14\TEMPLATE\SiteTemplates directory.
+
+Site Templates are created from an existing site and are stored in Content database in the Sandboxed Solution gallery.
+
+
+Site definition is a template you creating it using codes.
+
+Site template is its existing template already Microsoft provided for us in the SharePoint.
+
+External Content Types:
+Created to work with data's out side sharepoint
+can be created in SPD (connect through BCS in SP 2013)
+can be created using Add-ins
+
+ benefits of using external content types:
+provide reusability
+Encapsulate complexities of external systems
+provide built-in office and sharepoint behavior
+more secure access
+simplify maintainance
+external data search
+enable working offline
+
+what to do with external data:?
+External lists
+Extrernal Data Columns
+Business Data webpart
+External content type picker
+item picker
+profile pages
+custom pages and application
+
+give sharepoint access to external users:
+
+in SPO: 
+https://sharepointmaven.com/how-to-share-files-and-folders-externally-in-sharepoint/ (easy and simple)
+
+in SP 2013:
+1. create a web application with forms-authentication.
+2. Make sure fbaConfigFeature.wsp is globally deployed and visigo.sharepoint.formsbasedauthentication.wsp is deployed to the created web application.
+3. activate the "Forms based authentication" feature in Site collection
+4. create an SQL DB for creating a local user account for the external users.
+5. In central admin -> FBA Configuration management -> edit the config file of the web application to use this created SQL DB.
+6. site settings -> user management -> create new users.
+ref: https://docs.microsoft.com/en-us/archive/blogs/ptsblog/configuring-sharepoint-2013-forms-based-authentication-with-sqlmembershipprovider
+
+
+lifecycle of an webpart in sharepoint:
+oninit
+onload
+createchildcontrol
+Ensurechildcontrol
+saveviewstate
+onprerender
+page.prerendercomplete
+render
+rendercontents
+onunload
+
+There are four predefined routines that take place in a WebPart Life Cycle,
+OnInit
+CreateChildControls
+OnPrerender
+Render  
+
+Content Query webpart:
+used when to display data's from across sites ans sitecollections.
+limitations: can display only upto 5000, hence controlling the source will be hard, so have to put lot's of filters to control it.
+
+To modify the content query webpart template:
+1. go to styles library.
+2. find the itemstyle.xslt file, it contains lots of templates for CQWP.
+3. modify the itemstyle.xslt file, add a new template and save the file.
+4. go to CQWP and select this newly created template.
+
+
+
+Tough interview quesions:
+https://blog.interviewmocha.com/sharepoint-interview-questions-for-hiring-experienced-developers
+
+Answers:
+
+
+1. In order to specify explicit credentials with a Web Service, you generally instantiate the web service, and then using the credentials properties of the Web Service object you use the System.Net.NetworkCredential class to specify the username, password, and domain that you wish to pass when making the web service call and operations.
+
+2. in server side object model during updating the data use spsecurity.runwithelevatedprivileges to make sure the application works smoothly.
+
+3. Using external content type with BCS application. in SPO create external content type, list, using Add-ins
+
+4. .net managed code (CSOM), silver light, JSOM.
+
+5. Depends on project and client requirement.
+	some answers: https://www.mssqltips.com/sqlservertip/3828/when-to-use-a-new-sharepoint-site-collection-vs-a-new-sub-site/#:~:text=If%20you%20are%20creating%20a,dedicated%20URL%20to%20your%20site.
+
+6. same as 1, use the System.Net.NetworkCredential
+
+7. query.ViewAttributes = "Scope=\"Recursive\"";
+
