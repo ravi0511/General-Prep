@@ -1,0 +1,18 @@
+Architecture:
+
+built on asp.net and uses SQL DB for storage.
+
+D365 -> CRM + ERP + Business Logics tool
+
+CRM(modules):
+Sales
+Services
+Field Services
+Marketing
+
+ERP(modules):
+Supply Chain Management
+etc....
+
+Business Logic(modules):
+AI modules
