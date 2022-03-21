@@ -34,6 +34,42 @@ plugins
 
 Business process flows:
  * settings -> customization -> process -> create new (type - business process flow)
- * can be created for an entity or for multiple entity
+what is BPF?
+Guided Process to get work done
+Streamlined User Experience for data entry
+Visual indicator
+Avoid mistake and Quick process
+BPF integration with other customization
+Lead to Opportunity Sales Process
+Opportunity Sales Process
+Phone to Case Process
+Multiple entity in BPF
+Switch Process
+Enable in entity definition
+
+Maximum number of processes, stages, and steps:
+    There can be no more than 10 activated business process flow processes per entity. 
+    Each process can contain no more than 30 stages. 
+    Multi-entity processes can contain no more than five entities.
+    
+    
+Plugins:
+custom .net application/action inserted into CRM
+
+* Custom Business code
+* CRM Event Handlers
+* Event Execution Pipeline (process thorugh which plugin executes in different stages ie pre-validation(no scope for roll back), pre-operations and post operations of an event eg: before/after create/delete event)
+* Plugin Context (stores all the input parameters, ie if a plugin is run for account entity, then all the fields on the accounts are made available through this context)
+* Impersonation (run on some other user credentials)
+* Plugin registration tool
+* Privilege for Register
+* Plug in isolations
+* Messages and Images 
+* 2mins TimeOUT (better to create plugins which runs within 2mins, else it'll throw timeout errors.)
+* Sync/Async
+* Registration options
+
+steps to create:
+VS -> class library -> add library "MS.Crmsdk.coreassemblies" + "xr,.sdk.pluginregistrationtool" -> 
  
  
