@@ -96,6 +96,18 @@ Debugging:
 7. select the event, assembly, plugin etc
 7. Start Execution
  
+********************
+form script/javascript:
 
+executionContext --> gives all the context of CRM
+executionContext.getFormContext() -> provided by MS, give the form context for the form where the js is executing.
+executionContext.getFormContext().getAttribute("logicalname") --> gettting the field details.
+executionContext.getFormContext().getAttribute("logicalname").getValue() --> gettting the field value.
+
+uploading the script to a form:
+1. upload in the web reource
+2. Add to form library
+3. Event Handler -> on which control you wanted to execute the file/script
+4. Add a event, select the uploaded script and enter the function name you wanted to execute.
 
 
