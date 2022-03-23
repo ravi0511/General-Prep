@@ -53,7 +53,7 @@ Maximum number of processes, stages, and steps:
     Multi-entity processes can contain no more than five entities.
     
     
-Plugins:
+Plugins: (https://www.youtube.com/watch?v=cabRANPQBvU)
 custom .net application/action inserted into CRM
 
 * Custom Business code
@@ -70,6 +70,32 @@ custom .net application/action inserted into CRM
 * Registration options
 
 steps to create:
-VS -> class library -> add library "MS.Crmsdk.coreassemblies" + "xr,.sdk.pluginregistrationtool" -> 
+1. VS -> class library -> add library "MS.Crmsdk.coreassemblies" + "xrm.sdk.pluginregistrationtool" -> add namespace "MS.xrm.sdk" -> add interface "Iplugin" to the class.
+2. add interface and necessary execute code from intellisense.
+3. write your necessary code.
+
+Register the plugin:
+1. Run the pluginregistration tool
+2. connect to CRM using login credentials
+3. Create new assembly --> select the created dll.
+4. create new step under the created assembly.
+
+Update the plugin:
+1. Run the pluginregistration tool
+2. connect to CRM using login credentials
+3. Update new assembly --> select the created dll.
+4. Update new step under the created assembly.
+
+Debugging:
+1. Install the profiler
+2. Create the event you need to debug.
+3. select the step, start the profiler.
+4. go to VS, start debug and attach the "pluginregistrationtool" to the debugger.
+5. go to pluginregistrationtool again run the debug.
+6. Create the event you need to debug
+7. select the event, assembly, plugin etc
+7. Start Execution
  
- 
+
+
+
