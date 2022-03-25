@@ -31,7 +31,7 @@ Custom development:
 form scripts/Javascripts
 plugins
 
-
+**********************************************
 Business process flows:
  * settings -> customization -> process -> create new (type - business process flow)
 what is BPF?
@@ -110,4 +110,35 @@ uploading the script to a form:
 3. Event Handler -> on which control you wanted to execute the file/script
 4. Add a event, select the uploaded script and enter the function name you wanted to execute.
 
+*********************************
 
+Workflows:
+
+* Can be Asynchronous or Real time 
+* Can be initiated by User or can be called from Javascript 
+* Can be called On-Demand 
+* Can be extended by Custom Workflow Activities 
+* Can call Child Workflows 
+* Can Execute Messages like Create, Update, Delete, Assign, Retrieve etc 
+* No developers required to configure workflow 
+* Exceptions are captured in system job 
+* Defines Triggers 
+* Supports workflow running scope 
+
+********************************************
+
+Actions:
+
+* Cannot be run On-demand by user 
+* Only can triggered by Code or Processes 
+* Supports Input and Output Arguments 
+* Can be configured to run for all entity by selecting None(global) 
+* Can be used as a message or event 
+* No Scope configuration 
+* No automatic run option 
+
+*************************************************
+
+Custom Workflow Activity/Action in CRM:
+
+This is not creation of a custom workflow but creating an custom activity/action in the workflow.
