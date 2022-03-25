@@ -139,6 +139,14 @@ Actions:
 
 *************************************************
 
-Custom Workflow Activity/Action in CRM:
+Custom Workflow Activity/Action in CRM (https://www.youtube.com/watch?v=Ps1u6Ti2wQ8):
 
 This is not creation of a custom workflow but creating an custom activity/action in the workflow.
+
+VS -> class -> add key --> add references (xrm libs) --> add new class -> add namespaces -> add interfaces -> write code
+
+build/rebuild the code.
+
+open xrmregistrationplugintool -> add dll as an assembly.
+
+create a regular workflow -> add the custom activity/action -> (all other steps are similar to regular workflow.)
