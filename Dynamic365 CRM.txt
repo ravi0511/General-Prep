@@ -150,3 +150,24 @@ build/rebuild the code.
 open xrmregistrationplugintool -> add dll as an assembly.
 
 create a regular workflow -> add the custom activity/action -> (all other steps are similar to regular workflow.)
+
+************************************************
+
+Security:
+
+types:
+1. Role based
+2. Roe based
+3. field based
+4. hierarchy based - Manager and Position hierarchy
+
+
+fundamentals:
+
+Organization
+Business unit
+Users
+Security roles
+Previleges
+Access level/depth
+Important Notes
