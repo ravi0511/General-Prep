@@ -278,6 +278,11 @@ The JavaScript files, CSS, and other assets are packaged in the package when the
 
 .sass -> A SASS file is a Syntactically Awesome StyleSheets file. It contains Sass syntax, which is an extension of cascading style sheets (CSS) used to format the layout of webpages.
 
+
+Connecting two webparts:
+https://docs.microsoft.com/en-us/sharepoint/dev/spfx/dynamic-data
+https://ravichandran.blog/2020/06/12/send-and-receive-values-between-two-spfx-webparts/
+
 ****************************************************************************************************
 
 SharePoint Search:
