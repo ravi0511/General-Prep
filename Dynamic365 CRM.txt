@@ -157,7 +157,7 @@ Security:
 
 types:
 1. Role based
-2. Roe based
+2. Row based
 3. field based
 4. hierarchy based - Manager and Position hierarchy
 
