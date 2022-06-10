@@ -30,6 +30,7 @@ Development tools/techniques -- ootb:
 Custom development:
 form scripts/Javascripts
 plugins
+PCF (powerapps control framework) - similar to SPFx
 
 **********************************************
 Business process flows:
