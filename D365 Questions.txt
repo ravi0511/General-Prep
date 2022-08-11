@@ -1,0 +1,9 @@
+access team vs owner team
+shared variables
+impersonation in CRM/plugins
+context.SharedVariable
+relationship Behaviour in CRM
+linked entity
+early binding & late binding
+fetchXML and Queryexpression
+services in D365 - org servcies,Odata, deployment
