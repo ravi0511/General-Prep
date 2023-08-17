@@ -504,7 +504,8 @@ owners: creator of the app, has full control over it.
 Concurrency issues to be noted
 
 
-
+extract .msapp file:
+pac canvas unpack --msapp C:\Users\arra\Downloads\TheHub_API_Test2023_20230811074026\Microsoft.PowerApps\apps\17494953909612264949\N82b14911-719f-4889-9088-0ea9c94cb213-document.msapp --sources C:\Users\arra\Downloads\TheHub_API_Test2023_20230811074026\Microsoft.PowerApps\apps\17494953909612264949\MsappFiles
 
 ***************************************************************************************************************
 
