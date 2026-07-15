@@ -1015,3 +1015,18 @@ Answers:
 
 7. query.ViewAttributes = "Scope=\"Recursive\"";
 
+
+
+************************************************************************************************************
+SharePoint - AI - Copilot - SPFx:
+SharePoint Embedded
+SharePoint Skills
+SharePoint Webhooks
+
+SharePoint Copilot --> skills --> stored in Site Contents -> Agent Assest -> Skills (Folder) -> Skills name (.md) file
+	
+
+
+
+
+
