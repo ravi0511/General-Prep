@@ -146,6 +146,9 @@ sp-core-library -> ref: https://docs.microsoft.com/en-us/javascript/api/sp-core-
 
 spfx extensions will not work in classic pages.
 
+spfx webpart can be deployed in Teams from tenant app catalog
+spfx adaptive cards can be deployed in Viva connections from tenant app catalog
+
 
 why spfx ?
 
