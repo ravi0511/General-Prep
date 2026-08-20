@@ -1027,9 +1027,122 @@ SharePoint Skills
 SharePoint Webhooks
 
 SharePoint Copilot --> skills --> stored in Site Contents -> Agent Assest -> Skills (Folder) -> Skills name (.md) file
+
+****************************************************************************************************
+ref: https://microsoft.github.io/copilot-camp/pages/sharepoint/
+Copilot + SharePoint Extensibility:
+2 Types:
+1. Custom SharePoint Agent
+
+	Integrated with SharePoint Online user experience
+	SharePoint Online content only
+	Supported in Microsoft Teams chat
+	Microsoft 365 Copilot license or Microsoft Copilot Studio capacity or Pay-As-You-Go
+
+	Can Target:
+	sites
+	libraries
+	documents
+
+	A user needs to have contribute permissions on the target library to create a Custom SharePoint agent
+	A site owner can promote Custom SharePoint agents at site-level, too.
+
+	A Custom SharePoint agent can also be shared in Microsoft Teams to enhance the user experience in chats (one to one or group chats). Last but not least, a Custom SharePoint agent automatically becomes available in the Microsoft 365 Copilot Chat as a custom agent.
+
+	CREATING AGENTS:
+	1. Ai actions(lib/site) -> Create Agent
+	2. Select the Create command to create the agent and start using it.
+	3. Chay with agent
+
+	FINE TUNING the agent:
+	1. find the .agent file, edit the file.
+	Overview: name, icon, and purpose/description
+	Sources: you can configure the data sources (sites, libraries, or files) to use as the knowledge base
+	Behavior: welcome messaging, starter prompts, and agent instructions
+
+	In the future it will be possible to rely on Microsoft Copilot Studio to configure additional knowledge sources. At the moment, SharePoint Online is the only supported data source for a Custom SharePoint agent.
+
+	UPDATING INSTRUCTIONS: 
+	Go to Behavior tab,
+	1. Welcome messaging
+	2. Starter prompts
+	3. Agent instruction (most important and based on the input prompt, max 8000 character)
+
+	1. Approving and promoting the agent (site level, top right corner agent icon)
+	2. Set as approved
+	3. Approved agents will move to "Site Assests/Copilots"
+
+
+	SHARING THE CUSTOM SHAREPOINT AGENT:
+	As like as it happens with any other SharePoint Online file, you can choose the target people (user, groups, or emails)
+	Copy link for Teams, When you paste the link into a group chat -> Add to this Chat
+
+	INTERACTING WITH AGENT IN TEAMS:
+	You can now interact with the agent within the group chat experience in Microsoft Teams
+	you simply need to at mention by name (@HR Agent) 
+	View response
 	
 
+2. SharePoint Copilot Apps (SPFx 1.24 >)
+	
+	Custom UX in Microsoft 365 Copilot
+	Surface rich, interactive UX components inside the Copilot canvas
+	Built with SharePoint Framework
+	Relies on MCP (Model Context Protocol) Apps
+	Hosting and tool routing are automatic
 
+	Example scenarios:
+	
+		Line of Business (LOB) agents: bring LOB data into the canvas, from sales dashboards and charts to time off, help desk, expenses, and bookings.
+		Corporate Communications and Services agents: turn intranet experiences into components, like tailored news, personal dashboards, and onboarding tasks.
+		Management and Governance agents: streamline admin work such as site provisioning, policy enforcement, and governance dashboards.
 
+	pre-requists:
+	SPFx v1.24 requires Node.js >=22.14.0 <23.0.0
+	VS code
+	M365 tenant with sharepoint app catalog and M365 Copilot enabled
+
+	Solution structure:
+	copilot-agent.json: the Copilot-specific file that declares the agent and lists the component GUIDs it exposes.
+	manifest.json: the Microsoft 365 app manifest. It describes the app metadata (id, name, version, developer information, icons) and, through its copilotAgents.declarativeAgents section, points to the declarativeAgent.json file. This is the entry point that Microsoft 365 uses to register and surface the declarative agent that sits behind the scenes of your SharePoint Copilot App.
+
+	declarativeAgent.json: the declarative agent manifest. It defines the agent itself, including its display name, description, the instructions it follows, the conversation starters, and the capabilities and actions it exposes. Here it references the instruction.txt file for the system prompt and the ai-plugin.json file for the actions (tools) the agent can invoke.
+
+	instruction.txt: the system prompt (also known as the instructions) for the declarative agent. It steers the tone, behavior, and boundaries of the agent, telling the orchestrator how to respond and when to call the available tools. Keeping the instructions in a dedicated file makes them easier to iterate on.
+
+	ai-plugin.json: the API plugin manifest that declares the functions (tools) the agent can call, together with their parameters and descriptions. You don't need to edit this file.
+
+	color.png and outline.png: the app icons referenced by manifest.json. color.png is the full-color icon shown in the agent store and the app bar, while outline.png is the monochrome outline icon used in places like the Teams rail.
+
+	TESTING - copilot workbench. which hosts the same host-to-component contract that Copilot uses in production.
+
+	https://<your-tenant>.sharepoint.com/_layouts/15/CopilotWorkbench.aspx
+
+	PACKAGE:
+	npm run build - 2 artifacts
+	1. .sppkg
+	2. .zip (declarative agent (Teams app) on its own)
+			Install the Microsoft 365 Agents Toolkit CLI and run the validator:
+			npm install -g @microsoft/m365agentstoolkit-cli
+			atk validate --package-file ./teams/helloworld-agent.zip
+
+	DEPLOYMENT:
+	1. SharePoint tenant app catalog
+	2. Add to Teams
+	Verify:
+	Teams Admin Center -> Teams Apps -> Manage Apps
+	Microsoft 365 admin center -> Agents -> All Agents
+
+	You are now ready to use your agent in Microsoft 365 Copilot. Open Microsoft 365 Copilot chat at https://m365.cloud.microsoft/chat and sign in with an account in the same tenant where you deployed the agent.
+	
+	From the left navigation, select More Agents and scroll to the Built by your org group.
+	Find your agent (for example HelloWorld Agent), open it, and select Open. If you cannot find the agent, you can search for it by name (for example HelloWorld Agent) in the search box at the top of the page.
+	Invoke the tool with an explicit prompt that names it, so Copilot reliably routes the request to your component:
+	
+	Run the HelloWorldTool with the message "Welcome to Copilot Apps" using a green accent
+	The first time you invoke the agent, Copilot asks for consent. Select Allow.
+	Copilot calls HelloWorldTool and mounts your React component inline in the response, showing the formatted greeting card. The greeting uses your signed-in name (fetched from Microsoft Graph), together with the message and accent color the model extracted from your prompt.
+	This is the same component and the same MCP contract you debugged in the Workbench, only the host changed from the Workbench to Microsoft 365 Copilot.
+		
 
 
