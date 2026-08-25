@@ -1,0 +1,23 @@
+$certname = "SalesPortalAzureJobCertification"    ## Replace {certificateName}
+$certname = "COREplusAuthentiationCertification"    ## Replace {certificateName}
+$cert = New-SelfSignedCertificate -Subject "CN=$certname" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256 -NotAfter (Get-Date).AddYears(10)
+
+
+Export-Certificate -Cert $cert -FilePath "C:\Users\arra\Downloads\$certname.cer"   ## Specify your preferred location
+
+$mypwd = ConvertTo-SecureString -String "passwordforcertificate" -Force -AsPlainText  ## Replace {myPassword}
+
+Export-PfxCertificate -Cert $cert -FilePath "C:\Users\arra\Downloads\$certname.pfx" -Password $mypwd   ## Specify your preferred location
+
+
+$password = (ConvertTo-SecureString -AsPlainText 'passwordforcertificate' -Force)
+Connect-PnPOnline -Url "https://ecolab.sharepoint.com/sites/CORE-InternalKC" -ClientId 0b2d1e5e-3f9b-4cb3-89f7-4a2a2db7d139 -CertificatePath 'C:\Users\arra\Downloads\COREplusAuthentiationCertification.pfx' -CertificatePassword $password  -Tenant 'nalco.microsoftonline.com'
+
+
+Connect-PnPOnline -Url "https://ecolab.sharepoint.com/sites/CORE-COREplusAdminKC" -ClientId 0b2d1e5e-3f9b-4cb3-89f7-4a2a2db7d139 -Tenant 'nalco.microsoftonline.com' -Thumbprint ABFE82474E6B05F8E84D2390A662EB92C867D98F
+
+Get-PnPAzureADAppSitePermission -Site "https://ecolab.sharepoint.com/sites/CORE-COREplusAdminKC"
+
+
+Connect-PnPOnline -Url "https://ecolab.sharepoint.com/sites/CORE-Downstream"-Interactive -ClientID
+fd80204b-c9e4-4b4d-8a82-4f1428c3c566
