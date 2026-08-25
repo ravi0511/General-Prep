@@ -1,0 +1,31 @@
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Templates ID="COREPLUS-TEMPLATES">
+    <pnp:ProvisioningTemplate ID="COREPLUS" Version="1.0">
+      <pnp:Footer Enabled="true" Name="" Logo="https://ecolab.sharepoint.com/sites/CorePlus/SiteAssets/__rectSitelogo__MicrosoftTeams-image.png" BackgroundEmphasis="Strong" RemoveExistingNodes="true" Layout="Extended" DisplayName="">
+        <pnp:FooterLinks>
+          <pnp:FooterLink DisplayName="People and Learning" Url="http://linkless.header/">
+            <pnp:FooterLink DisplayName="Learning Resources" Url="https://ecolab.sharepoint.com/sites/CORE-LEX/SitePages/Learning%20GU.aspx" />
+            <pnp:FooterLink DisplayName="New Hire Onboarding" Url="https://ecolab.sharepoint.com/sites/CORE-Learning/SitePages/New%20Hire%20Onboarding.aspx" />
+            <pnp:FooterLink DisplayName="Technical Learning" Url="https://ecolab.sharepoint.com/sites/CORE-Learning/SitePages/Technical%20Learning.aspx" />
+          </pnp:FooterLink>
+          <pnp:FooterLink DisplayName="CORE+ Support" Url="http://linkless.header/">
+            <pnp:FooterLink DisplayName="Ask a Question" Url="https://engage.cloud.microsoft/main/org/nalco.microsoftonline.com/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyMjI3MTQxODM2ODAifQ" />
+            <pnp:FooterLink DisplayName="Report a Problem" Url="mailto:CORE@Ecolab.com" />
+            <pnp:FooterLink DisplayName="Share Feedback" Url="https://ncv.microsoft.com/yY2t8s3yjt" />
+          </pnp:FooterLink>
+          <pnp:FooterLink DisplayName="Sites" Url="http://linkless.header/">
+            <pnp:FooterLink DisplayName="Inside Ecolab" Url="https://inside.ecolab.com/" />
+            <pnp:FooterLink DisplayName="My Ecolab" Url="https://www.myecolab.com/" />
+            <pnp:FooterLink DisplayName="Widen (Global Water Media Library)" Url="https://ecolab.widencollective.com/portals/ipy5n4r1/NalcoWaterMediaLibrary#9fa73521-6550-4ffa-b526-1f9071a43fb0" />
+            <pnp:FooterLink DisplayName="Workday Learning" Url="https://www.myworkday.com/ecolab/learning" />
+          </pnp:FooterLink>
+          <pnp:FooterLink DisplayName="Legal and Policies" Url="http://linkless.header/">
+            <pnp:FooterLink DisplayName="Copyright Policy" Url="https://ecolab.sharepoint.com/:p:/r/sites/CORE-LEX/Shared%20Documents/CORE+%20Copyright%20%26%20Intellectual%20Property%20Policy.pptx?d=w8b4503577ed449d0a782ae193214f6b9" />
+            <pnp:FooterLink DisplayName="Document Copyright Release Form" Url="https://ecolab.sharepoint.com/:b:/r/sites/CORE-LEX/Shared%20Documents/Document_Copyright_Release_Form.pdf" />
+            <pnp:FooterLink DisplayName="Intellectual Property Policy" Url="https://ecolab.sharepoint.com/:p:/r/sites/CORE-LEX/Shared%20Documents/CORE+%20Copyright%20%26%20Intellectual%20Property%20Policy.pptx?d=w8b4503577ed449d0a782ae193214f6b9" />
+          </pnp:FooterLink>
+        </pnp:FooterLinks>
+      </pnp:Footer>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
