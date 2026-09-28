@@ -1,0 +1,44 @@
+Reference: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview
+
+Responses and differs by the following factors:
+1. data grounding
+2. integration depth
+3. licensing
+
+copilot is powered by:
+1. LLM
+2. data grounding in web and/or organization data
+3. access scoped by user permission (secuirty and permission)
+
+License:
+Copilot Chat (Basic) license	- VS - Microsoft 365 Copilot (Basic) license - VS -	Microsoft 365 Copilot (Premium) license
+
+Copilot Chat (Basic) license:
+1. web data only
+2. no access in word,excel, ppt and oneNote
+3. access to agents using only web data and pay-as-you-go license
+4. user for - basic management controls and reporting for admins
+5. Upload the org files with your prompt.
+
+Microsoft 365 Copilot (Basic) license:
+1. web data only
+2. standard access in word,excel, ppt and oneNote
+3. access to agents using only web data and pay-as-you-go license
+4. user for - basic management controls and reporting for admins
+5. Upload the org files with your prompt.
+
+Microsoft 365 Copilot (Premium) license:
+1. web and org data (MS Graph and Work IQ)
+2. Full access in word,excel, ppt and oneNote - access to copilot cowork
+3. access to agents using web data and org data (cowork and work IQ via usage-based billing)
+4. advanced management controls and analytics for admins.
+  - SharePoint Advanced Management (SAM)
+
+
+
+Types of AI models used in Microsoft Online Services:
+1. AI models hosted and operated by Microsoft
+2. AI independent processors
+3. AI Subprocessors
+
+
