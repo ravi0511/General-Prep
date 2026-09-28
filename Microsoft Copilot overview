@@ -1,5 +1,10 @@
 Reference: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview
 
+CSP - Customer Solution Partner
+DPA - Data protection addendum
+EDP - Enterprise Data protection
+SAM - Sharepoint advanced management
+
 Responses and differs by the following factors:
 1. data grounding
 2. integration depth
@@ -41,4 +46,30 @@ Types of AI models used in Microsoft Online Services:
 2. AI independent processors
 3. AI Subprocessors
 
+AI Models hosted and operated by Microsoft:
+1. Certain AI models used in Microsoft Online Services are hosted on Azure and provided to customers directly by Microsoft (such as Azure OpenAI or Black Forest Labs FLUX).
+2. evaluated and deeply integration in MS products
+3. under microsoft Data protection addendum (DPA)
+4. Data does not leave MS
 
+AI Independent Processor:
+1. An AI independent processor is a third-party AI provider that processes data under its own data processing commitments, privacy, compliance, and enterprise terms.
+2. Data processing occurs outside MS
+
+AI Subprocessor:
+1. An AI Subprocessor is a third-party AI provider that handles data on Microsoft's behalf
+2. When used, an AI Subprocessor handles data to deliver the specific services and functionalities Microsoft has engaged them to provide.
+
+Billing:
+How does the pay-as-you-go service work ?
+-As an admin, when you use the pay-as-you-go service, you set up billing and users access declarative agents on a usage basis. You can manage billing, view costs, set spending budgets, and turn off services as needed.
+
+The following administrator roles can view and manage pay-as-you-go services:
+1. Global administrator
+2. Billing administrator
+3. AI administrator
+4. Global reader (read-only access)
+
+When you choose to use pay-as-you-go, usage of Microsoft Copilot Chat agents or SharePoint agents is billed to your Azure subscription using Azure meters.
+
+Security for Microsoft Copilot:
