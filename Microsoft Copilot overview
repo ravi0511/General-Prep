@@ -15,6 +15,8 @@ copilot is powered by:
 2. data grounding in web and/or organization data
 3. access scoped by user permission (secuirty and permission)
 
+*****************
+
 License:
 Copilot Chat (Basic) license	- VS - Microsoft 365 Copilot (Basic) license - VS -	Microsoft 365 Copilot (Premium) license
 
@@ -60,6 +62,9 @@ AI Subprocessor:
 1. An AI Subprocessor is a third-party AI provider that handles data on Microsoft's behalf
 2. When used, an AI Subprocessor handles data to deliver the specific services and functionalities Microsoft has engaged them to provide.
 
+
+*************************
+
 Billing:
 How does the pay-as-you-go service work ?
 -As an admin, when you use the pay-as-you-go service, you set up billing and users access declarative agents on a usage basis. You can manage billing, view costs, set spending budgets, and turn off services as needed.
@@ -73,3 +78,87 @@ The following administrator roles can view and manage pay-as-you-go services:
 When you choose to use pay-as-you-go, usage of Microsoft Copilot Chat agents or SharePoint agents is billed to your Azure subscription using Azure meters.
 
 Security for Microsoft Copilot:
+-inherits Microsoft 365 security, compliance, and privacy protections.
+
+layers/hyrarchy:
+1. Microsoft's defense-in-depth approach
+2. Identity and access protection
+3. Data protection and compliance
+    -Enterprise data protection
+4. Preventing oversharing
+
+Microsoft's defense-in-depth approach:
+1. multilayered
+2. defence in-depth strategy
+3. grounded in enterprise security, privacy, and compliance standards
+
+Identity and access protection:
+1. Microsoft 365 identity and access controls and aligns with Zero Trust principles such as strong identity verification, least-privilege access, and continuous evaluation
+
+Data protection and compliance:
+1. Copilot only accesses data that users are authorized to access
+2. it respects Microsoft 365 compliance, privacy, and data residency commitments.
+
+Enterprise data protection (EDP):
+1. contractual and technical commitments that apply to customer data 
+
+Over protection:
+-operates within existing permissions and access controls
+
+*******************************************
+
+Security dashboard:
+-built-in security controls from Microsoft Purview
+
+-Copilot security dashboard in the Microsoft 365 admin center
+  -Prevent data leaks with a data loss prevention (DLP) policy.
+  -Manage data oversharing.
+  -Strengthen data compliance.
+
+-Microsoft Security Dashboard for AI
+  - Real-time AI risk visibility
+  - Comprehensive AI inventory
+  - AI-powered insights with Security Copilot
+  - Tailored recommendations and remediation paths
+  - Executive reporting
+
+Microsoft Copilot prompt defense in depth:
+- multiple stages of prompt processing, before prompt reaches the model.
+- org data is being grounded, before user gets his/her response.
+
+The following stages represent the flow of a typical Microsoft Copilot interaction
+Stage 1: Prompt input: A user enters a prompt or attaches content to a Microsoft Copilot or agentic experience.
+Stage 2: Prompt ingress: The prompt is sent to the Microsoft Copilot orchestrator.
+Stage 3: Grounding: Content is retrieved from documents, messages, meetings, and other Microsoft 365 data.
+Stage 4: Web search: If enabled, web content is retrieved.
+Stage 5: Response egress: A response is displayed.
+
+Defense against prompt injection attacks:
+1. A prompt injection attempt occurs
+2. Microsoft applies prompt injection protections and other security controls
+3. Alerts are created
+
+Domain exclusion overview:
+By using domain exclusion, you can specify up to 1,000 sites to exclude from web grounding in Microsoft Copilot and Copilot Chat through a PowerShell script
+
+
+Secure and govern Microsoft Copilot: Foundational deployment guidance:
+1. Remediate oversharing
+2. Set up guardrails
+3. Meet regulations
+
+***************
+
+Privacy and Responsible AI:
+
+6 principles:
+fairness
+reliability and safety
+privacy and security
+inclusiveness
+transparency
+accountability
+
+- Application and Platform cards play a key role in operationalizing these principles by offering transparency around capabilities, intended uses, and limitations.
+- Application cards are created for AI applications and platform cards are created for AI platform services.
+  
