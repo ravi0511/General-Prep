@@ -202,3 +202,70 @@ Remediate oversharing -> set up guardrails -> meet regulations
 ************************
 
 Implement copilot for the organization
+
+1. set up pay-as-you-go services:
+pre-requistics:
+  Global admin, sharepoint, Billing or AI Admin
+  owner or contributor to RG in Azure
+  SharePoint license
+
+2. A Microsoft Copilot Studio capacity pack is a prepaid subscription that provides credits for Copilot Chat and SharePoint agent usage.
+
+Copilot controls overview:
+  - Copilot controls provide an integrated framework for Microsoft Copilot and agents.
+  - Use them to help secure data that Copilot and agents create or reference, manage Copilot and agent experiences, and measure and analyze adoption and impact across your organization.
+
+They provide a governance structure for the use of:
+
+  - Microsoft Copilot
+  - Copilot Chat
+  - Microsoft 365 prebuilt agents
+  - Agents your organization creates in Microsoft Copilot Studio and publish to Microsoft 365 channels
+
+Copilot controls consist of three main pillars:
+
+  - Security and governance
+  - Management controls
+  - Measurement and reporting
+
+Security and governance:
+When you implement Copilot and agents, you might face new and amplified risks related to data security, compliance, and governance. This security and governance framework helps you mitigate these issues.
+The security and governance pillar of Copilot controls focuses on the following key capabilities:
+
+  - Data security
+  - AI security
+  - Compliance and privacy
+
+Management controls:
+Copilot controls help you decide how to deploy your Microsoft Copilot licenses and agents to fit your organization's unique needs. You can find related management settings mainly in the Microsoft 365 admin center, Power Platform admin center, and Copilot Studio.
+
+The management pillar of Copilot controls focuses on the following key capabilities:
+
+  - Licensing and metering
+  - Agent lifecycle
+  - Customization
+
+Measurement and reporting:
+Copilot controls measurement and reporting capabilities help you understand adoption and business impact. These capabilities primarily come together as part of Copilot Analytics.
+
+The measurement and reporting pillar of Copilot controls focuses on the following key capabilities:
+
+  - Readiness and adoption
+  - Productivity impact
+  - Business value and return on investment (ROI)
+
+Copilot Analytics incorporates the following key data elements:
+
+  - Copilot usage data
+  - Agent usage data
+  - Microsoft Graph data from your organization
+
+Accessing an organizational asset library in the Microsoft Copilot app:
+- Connecting an organizational asset library (OAL) to Copilot enables brand content access in the Create experience of the Microsoft Copilot app, while also enabling Copilot Chat access in PowerPoint and Word.
+
+  - Organization-wide access to brand content
+  - Seamless integration in the Create experience
+  - Visuals pane support for editing images
+
+*********************************************************************
+
