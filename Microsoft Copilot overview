@@ -5,6 +5,8 @@ DPA - Data protection addendum
 EDP - Enterprise Data protection
 SAM - Sharepoint advanced management
 
+Requires - AI administrator role in Azure subscription attached to pay
+
 Responses and differs by the following factors:
 1. data grounding
 2. integration depth
@@ -162,3 +164,41 @@ accountability
 - Application and Platform cards play a key role in operationalizing these principles by offering transparency around capabilities, intended uses, and limitations.
 - Application cards are created for AI applications and platform cards are created for AI platform services.
   
+************
+
+Copilot Architecture:
+
+1. User prompts and Copilot responses:
+
+users device -> device apps -> copilot app -> MS graph (user accessible data) -> copilot app -> llm model(openAI) -> device apps
+
+Grounding improves the specificity of your prompt, and helps you get answers that are relevant and actionable to your specific task.
+Grounding types:
+1. Web --> collect data from multiple websites -> llm model(openAI) -> response
+2. Local -> Files uploaded in copilot app chat
+3. Work -> Data from teams, mails, sharepoint sites, onedrive, etc etc
+
+2. User access and data privacy:
+Copilot only accesses data that an individual user is authorized to access, based on, for example, existing Microsoft 365 role-based access controls. Copilot doesn't access data that the user doesn't have permission to access.
+
+3. Configure a secure and governed foundation:
+Remediate oversharing -> set up guardrails -> meet regulations
+
+4. Get ready for Microsoft Copilot and agents with SharePoint Advanced Management
+  - Use Content Management Assessment
+    - Access the Content Management Assessment hub
+  - Employ site lifecycle management and archiving
+    - Site lifecycle management
+    - Microsoft 365 Archive
+  - Prevent accidental oversharing
+    - Adjust sharing settings for SharePoint and OneDrive
+    - Use data access governance reports to identify oversharing risks
+    - Use AI insights to interpret report findings
+    - Restrict access to sensitive content
+    - Control content discovery of high-risk sites
+  - Use the SharePoint Admin Agent
+  - Implement backup and restore procedures
+
+************************
+
+Implement copilot for the organization
