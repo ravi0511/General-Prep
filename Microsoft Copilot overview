@@ -271,9 +271,27 @@ Accessing an organizational asset library in the Microsoft Copilot app:
 
 Manage:
 
+  Config policies, settings and access:
+
 All the settings are under M365
 Types: (these are outdated)
 User Access
 Data Access
 Copilot action
 Other settings
+
+Flex routing lets customers in the European Union (EU) and the European Free Trade Association (EFTA) allow large language model (LLM) inferencing to occur outside the EU Data Boundary during periods of peak demand to help maintain a consistent Copilot experience. Inferencing is the processing step when an AI model executes the prompt to produce an output or response, such as summarizing content or answering a question.
+
+Manage Copilot experience:
+
+  Cowork:
+    Microsoft Copilot Cowork can carry out tasks on your behalf. You describe what you need, and Cowork sends emails, schedules meetings, creates documents, posts in Teams, and manages your calendar. You approve each action before it happens.
+    How you work with Cowork?
+      1. Describe your task
+      2. Watch Cowork work
+      3. Interrupt, steer, or pause the session
+      4. Approve actions when asked
+      5. Review the results
+
+Customize cowork:
+    - Preferences, Plugins, and Skills.
