@@ -295,3 +295,63 @@ Manage Copilot experience:
 
 Customize cowork:
     - Preferences, Plugins, and Skills.
+
+Cowork skills:
+  OOTB skills
+  Custom skills: Can be created in 3 ways. (Custom skills aren't supported in Cowork on mobile platforms.)
+    - The fastest way to create a skill is from the Customize page -> add new skill -> prompt -> creates a SKILL.md file in onedrive under skills folder
+    - Build a skill through chat 
+    - Build a skill manually in OneDrive / uplodad a skill
+
+    share a skill to another user
+  plugin - skills: Cowork also supports plugin skills from the Microsoft 365 App Store. When you acquire a plugin, its skills appear alongside the built-in skills and are available in your sessions.
+  Note: You can create up to 50 custom skills. Each SKILL.md file can be up to 1 MB. Skills can also include up to 20 companion files (such as reference documents and scripts), with a total of 10 MB per skill.
+
+
+How Cowork evaluates skills ?
+  Cowork evaluates it automatically and returns a plain-language quality report. You don't need to ask for the evaluation.
+  A skill can fail in two ways: it doesn't trigger when it should (or it takes requests meant for another skill), or it triggers and does the wrong thing. Evaluation is designed to catch both before you rely on the skill in daily work.
+  The depth of evaluation scales with the skill's reach (personal, team, organization, or store) and its risk level (low, medium, or high).
+  
+  Cowork runs two kinds of checks:
+  
+  Static checks: review the skill's structure and limits, scan any bundled code for security issues, and check the skill's text for prompt-injection patterns. Code is never executed during static checks.
+  Behavioral checks: run the skill against realistic prompts. Cowork evaluates the output, the actions the skill takes, and how efficiently it uses tools. Triggering is scored for precision and recall rather than as a single number.
+  
+  Cowork scores each skill from 0 to 100 across four dimensions worth 25 points each:
+  
+  Trigger clarity: the skill fires at the right time.
+  Instruction specificity: the skill knows what to do.
+  Scope boundaries: the skill stays within its intended purpose.
+  Robustness: the skill handles unexpected input safely.
+
+
+Build apps with the App skill (Frontier):
+
+  The built-in App skill lets you create lightweight, interactive apps in Cowork without writing code. Cowork invokes the skill when you describe an app you want to build.
+  Ask Cowork to add features, such as showing participant info as cards. The app updates instantly as you make changes.
+  Your app saves automatically as you work. Publishing makes your app, and your latest changes, available to the users you share it with. After you publish, share the app with a link so anyone in your organization who can use Microsoft 365 Copilot can open and use it.
+
+Schedule prompts:
+
+  You can schedule a prompt to run automatically on a recurring basis.
+
+Set up event-driven tasks:
+
+  Event-driven tasks run when something happens 
+
+Use brand templates with Copilot Cowork:
+  Copilot Cowork uses brand templates to apply your organization's fonts, colors, logos, and slide layouts to the files it creates for you. When a template is available, Cowork uses that styling so your PowerPoint decks match your team's look.
+  exceptions can be made for personal files, so personal brands can we applied by uploading files (ppt) to the chat
+
+Supported PowerPoint template branding elements:
+  Theme palette: your brand's background, heading, and accent colors
+  Brand fonts: your heading and body typefaces, preserved in the file
+  Logos: placed by the template, for example, on title and section slides
+  All named layouts and the slide master: title, agenda/contents, section dividers, multi-column content, closing slides, and any others the template defines
+  Slide geometry and placeholder positions: Cowork doesn't change these; it rewrites the text content while leaving the design intact
+
+
+When Cowork needs to use a website to complete a task, it opens a hidden tab in Microsoft Edge and works there. You stay in the Cowork conversation and watch progress through chat updates and the side panel.
+
+When Cowork runs a user's task, it processes the user's files in a temporary, isolated environment inside the Microsoft 365 service boundary. Cowork uses the files only for the duration of the task and removes the temporary environment when the task finishes. Users can't view or access this environment.
