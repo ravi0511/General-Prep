@@ -91,6 +91,9 @@ Initiatives:
 6. Integration in Power Apps through custom connection in a B2C environment -> resolve complex solution of authentication across different networks and directory.
 7. QA Automation -> help reduce manual testing efforts.
 8. Deployment Automation (CI/CD) -> saves deployment time, standardize deployment process, increase frequency in deployment.
+9. Setup/forming a new team from end - to - end.
+10. Managing multiple teams
+11. Adopting multiple new technologies, products and process. (SharePoint Online, CRM, Viva Engage, Support Team) 
 
 Work history:
 December, 2020 - till date
