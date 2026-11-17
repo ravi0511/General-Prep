@@ -98,3 +98,6 @@ Cognizant
 
 Education:
 Bachelor of Engineering - Electronics and communication Engineering - Graduated: 2013
+
+prompt:
+Create a PDF resume with a modern layout for a solution architect of Microsoft 365 with 14 years of experience with specialization in sharepoint, power platform, dynamics 365, copilot studio, copilot administration and a few azure services.
