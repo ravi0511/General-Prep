@@ -26,6 +26,7 @@ Viva engage
 copilot studio
 Powershell
 Purview
+Agent 365
 
 Azure:
 Azure functions
@@ -93,7 +94,8 @@ Initiatives:
 8. Deployment Automation (CI/CD) -> saves deployment time, standardize deployment process, increase frequency in deployment.
 9. Setup/forming a new team from end - to - end.
 10. Managing multiple teams
-11. Adopting multiple new technologies, products and process. (SharePoint Online, CRM, Viva Engage, Support Team) 
+11. Adopting multiple new technologies, products and process. (SharePoint Online, CRM, Viva Engage, Support Team)
+12. Setting up new standards, processes, good practices, quality deliverable.
 
 Work history:
 December, 2020 - till date
