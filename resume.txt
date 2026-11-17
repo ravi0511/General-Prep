@@ -83,8 +83,14 @@ Project management:
 Agile, SCRUM practices, Azure DevOps, Jira, SDLC practices, code review, high level design, low level design, FDD (Feature-Driven Development), High level design, low level design, SoW.
 
 Initiatives:
-QA Automation
-Deployment Automation (CI/CD)
+1. SharePoint on-prem to SharePoint Online using Power Apps, Power Automate, Sharegate -> help achieve enterprise cloud strategy
+2. Integration of CRM with SharePoint Online to store documents for CRM accounts -> helps in cost saving in CRM to store files
+3. Building search engine to search across azure storage account(file server) using Azure AI(Azure Cognitive Search) -> help to search archives saving search time and build cost effectively.
+4. Creating native apps through power apps wrapper -> help improving user experience
+5. Building chat bot for performing information surfacing in sharepoint online content using power virtual agent(copilot studio) -> innovate using AI and improve user experience, access information quicker.
+6. Integration in Power Apps through custom connection in a B2C environment -> resolve complex solution of authentication across different networks and directory.
+7. QA Automation -> help reduce manual testing efforts.
+8. Deployment Automation (CI/CD) -> saves deployment time, standardize deployment process, increase frequency in deployment.
 
 Work history:
 December, 2020 - till date
@@ -98,6 +104,8 @@ Cognizant
 
 Education:
 Bachelor of Engineering - Electronics and communication Engineering - Graduated: 2013
+
+
 
 prompt:
 Create a PDF resume with a modern layout for a solution architect of Microsoft 365 with 14 years of experience with specialization in sharepoint, power platform, dynamics 365, copilot studio, copilot administration and a few azure services.
