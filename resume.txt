@@ -1,0 +1,100 @@
+Current Designation: Software Engineering Manager
+Current Role: Microsoft 365 Solution Architect
+
+Name: Ravi Prakas A R
+Mobile Number: +91-8136852626
+Email: raviprakasworkmail@gmail.com
+
+SharePoint Online:
+sharepoint online, on-prem
+Sharepoint embedded
+SharePoint search
+SharePoint administration
+sharepoint skills
+sharepoint agent
+sharepoint webhooks
+SharePoint advance management -> SharePoint premium (sharepoint syntex)
+REST API
+CSOM
+SPFx (webpart, extension, library component, adaptive cards, copilot component)
+
+M365:
+SharePoint
+Onedrive
+Teams
+Viva engage
+copilot studio
+Powershell
+Purview
+
+Azure:
+Azure functions
+Azure web jobs
+Azure runbooks
+azure data factory
+App registration
+Azure sql db
+Azure AI search
+
+Power platform:
+Power apps (canvas, model drive, code app)
+Power automate (cloud flow, Desktop)
+power virtual agent(copilot studio)
+
+Dynamics 365:
+javascript
+plugins
+Business process flows
+Workflows
+PCF (powerapps control framework) - similar to SPFx
+
+
+AI:
+M365 copilot, chat, cowork, code, autopilot
+Copilot studio
+GitHub copilot
+spec-kit
+
+
+Third party tools:
+sharegate
+xrmtoolbox
+kingswaysoft
+Nintex
+Infopath
+
+Others:
+Power BI
+MERN stack
+nodejs
+GitHub repo
+Azure repo
+
+Coding/language:
+.Net FrameWork, .Net Core, C#, javascript, typescript, CLI
+
+
+Certifications:
+Az-900
+PL-900
+AI-900
+
+Project management:
+Agile, SCRUM practices, Azure DevOps, Jira, SDLC practices, code review, high level design, low level design, FDD (Feature-Driven Development), High level design, low level design, SoW.
+
+Initiatives:
+QA Automation
+Deployment Automation (CI/CD)
+
+Work history:
+December, 2020 - till date
+Ecolab
+
+January, 2018 - December, 2020
+IBM
+
+September, 2013 - January, 2018
+Cognizant
+
+Education:
+Bachelor of Engineering - Electronics and communication Engineering - Graduated: 2013
