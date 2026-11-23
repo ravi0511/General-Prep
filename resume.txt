@@ -96,6 +96,7 @@ Initiatives:
 10. Managing multiple teams
 11. Adopting multiple new technologies, products and process. (SharePoint Online, CRM, Viva Engage, Support Team)
 12. Setting up new standards, processes, good practices, quality deliverable.
+13. Adopting and Coaching SharePoint Agents, Copilot Agents to end users.
 
 Work history:
 December, 2020 - till date
